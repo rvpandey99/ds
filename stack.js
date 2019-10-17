@@ -24,21 +24,4 @@ function Stack(){
     }
 }
 
-const s = new Stack();
-
-const word = "racecar";
-let reverseWord = "";
-
-for(i=0; i<word.length;i++){
-    s.push(word[i]);
-}
-
-for(i=0; i<word.length;i++){
-    reverseWord += s.pop();
-}
-
-if (word === reverseWord){
-    console.log(`${word} is a pallindrome.`);
-} else {
-    console.log(`${word} is not a pallindrome.`);
-}
+module.exports = Stack;
