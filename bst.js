@@ -25,13 +25,17 @@ class BST {
                     return searchTree(node.left);
                 }
             }
-            if (data >= node.data){
+            if (data > node.data){
                 if (node.right == null){
                     node.right = new Node(data);
                     return;
                 } else if (node.right !== null){
                     return searchTree(node.right);
                 }
+            }
+            if (data === node.data){
+
+                return null;
             }
         }
         searchTree(node);
@@ -47,21 +51,21 @@ class BST {
                 return true;
             } else
             if (data < node.data){
-                if (node.left == null){
+                if (node.left === null){
                     return false;
                 } else if (node.left !== null){
                     return searchTree(node.left);
                 }
             } else
             if (data > node.data){
-                if (node.right == null){
+                if (node.right === null){
                     return false;
                 } else if (node.right !== null){
                     return searchTree(node.right);
                 }
             }
         }
-        searchTree(node);
+        return searchTree(node);
     }
 }
 
